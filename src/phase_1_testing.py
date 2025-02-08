@@ -9,7 +9,7 @@ source = "C:/Users/henry/cpsc386-cv-project/data/closeup-shot-black-labrador-pla
 # Run inference on the source
 results = model(source) # list of Results objects
 
-# Access first element of the results list
+# Access first element of the list
 result = results[0]
 
 # Display the result
