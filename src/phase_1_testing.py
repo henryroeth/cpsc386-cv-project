@@ -1,16 +1,27 @@
 from ultralytics import YOLO
+from PyQt5.QtWidgets import QApplication, QFileDialog
+import sys
 
-# Load a pretrained YOLO11n model
-model = YOLO("yolo11n-cls.pt")
+# Choose a pretrained model for either detection or classification
+modelChoice = int(input("Choose a type of model (1 for detection, 2 for classification): "))
 
-# Define path to the image file
-source = "C:/Users/henry/cpsc386-cv-project/data/closeup-shot-black-labrador-playing-grass-surrounded-by-greenery.jpg"
+# Load the chosen model
+if(modelChoice == 1):
+    model = YOLO("yolov8n.pt") # detection model
+elif(modelChoice == 2):
+    model = YOLO("yolo11n-cls.pt") # classification model
+
+# Choose the path to the image file
+app = QApplication(sys.argv)
+source, _ = QFileDialog.getOpenFileName(
+    None,
+    "Select Image",
+    "",
+    "Image Files (*.png *.jpg *.jpeg *.bmp *.gif)"
+)
 
 # Run inference on the source
-results = model(source) # list of Results objects
+results = model(source, show=True) # list of Results objects
 
-# Access first element of the list
-result = results[0]
-
-# Display the result
-result.show()
+# Show the results of the first element
+results[0].show()
