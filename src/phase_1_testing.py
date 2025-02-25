@@ -10,6 +10,8 @@ if(modelChoice == 1):
     model = YOLO("yolov8n.pt") # detection model
 elif(modelChoice == 2):
     model = YOLO("yolo11n-cls.pt") # classification model
+else:
+    sys.exit("Error: You must choose a valid option.") # exit with error message
 
 # Choose the path to the image file
 app = QApplication(sys.argv)
