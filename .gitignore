@@ -1,1 +1,5 @@
 src/venv/
+runs/
+dataset/
+src/yolov8n-cls.pt
+

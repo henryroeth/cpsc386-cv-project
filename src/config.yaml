@@ -1,7 +1,0 @@
-path: C:/Users/henry/aerialPLOT/aerialFLIGHT - General/Research and Dev Projects/Henry's Projects/Tree Detection & Segmentation (YOLOv8)/data # dataset root dir
-train: images/train # train images (relative to 'path')
-val: images/train # val images (relative to 'path')
-
-# Classes
-names:
-  0: tree

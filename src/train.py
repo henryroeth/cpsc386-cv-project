@@ -1,19 +1,8 @@
 from ultralytics import YOLO
 
-# Load the model
-print("Choose the model:")
-print("1. Pre-trained model (yolov8n.pt)")
-print("2. Model from scratch (yolov8n.yaml)")
+# Load pre-trained YOLOv8 classification model
+model = YOLO("yolov8n-cls.pt")  
 
-choice = input("Enter your choice (1 or 2): ") # define the choice of model
+# Train the model with specific metrics
+model.train(data="/home/henry/Projects/cpsc386-cv-project/dataset", epochs=30, imgsz=640, batch=16, patience=5)
 
-if choice == '1':
-    model = YOLO("yolov8n.pt")  # load pre-trained model
-elif choice == '2':
-    model = YOLO("yolov8n.yaml")  # load model from scratch
-else:
-    print("Invalid choice. Please enter 1 or 2.")
-
-# Use the model
-training_passes = int(input("Define the number of epochs: ")) # define the number of times the model is trained with the annotated dataset (epochs)
-results = model.train(data="src/detect_config.yaml", epochs=training_passes)
