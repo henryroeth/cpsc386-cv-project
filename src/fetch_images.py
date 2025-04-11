@@ -8,7 +8,7 @@ save_directory = "C:/Users/henry/Projects/cpsc386-cv-project/dataset"
 species = ["Amanita_muscaria", "Coprinus_comatus", "Laetiporus_sulphureus", "Pleurotus_ostreatus"]
 
 # Pexels API Key
-api_key = "K3NTmMrcS5xtZfec41AhvL6SsA9m3FfUx5mssPwMbSGTUCdTDidZV20N"
+api_key = ""
 
 # Pexels API base URL
 base_url = "https://api.pexels.com/v1/search?"
